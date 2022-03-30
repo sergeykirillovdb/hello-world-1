@@ -1,7 +1,7 @@
 services:
   hello-world:
     build: 
-      context: https://github.com/NealArw/hello-world-1
+      context: https://github.com/sergeykirillovdb/hello-world-1
       dockerfile: /Dockerfile
     environment:
       TEST1: test11
@@ -9,7 +9,7 @@ services:
 x-uffizzi:
   ingress:
     service: hello-world
-    port: 80
+    port: 2312432432432
     
   continuous_preview:
     share_to_github: true
