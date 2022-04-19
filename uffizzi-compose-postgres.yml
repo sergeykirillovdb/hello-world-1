@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  hello-world:
+    build:
+      context: https://github.com/sergeykirillovdb/hello-world-1
+      dockerfile: /Dockerfile
+
+x-uffizzi:
+  ingress:
+    service: hello-world
+    port: 80
+
+  continuous_preview:
+    delete_preview_after: 96h
+    delete_preview_when_image_tag_is_updated: true
+    deploy_preview_when_image_tag_is_created: true
+    delete_preview_when_pull_request_is_closed: true
+    deploy_preview_when_pull_request_is_opened: true
