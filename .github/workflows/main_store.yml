@@ -24,6 +24,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: sergeykirillov/hello-world-1
+          mask-tags: 'no'
       - name: Build and Push Image to Docker Hub
         uses: docker/build-push-action@v2
         with:
