@@ -2,7 +2,7 @@ name: Build Images and Handle Uffizzi Previews.
 
 on:
   pull_request:
-    types: [opened,reopened,synchronize,closed]
+    types: [opened,reopened,synchronize]
 
 jobs:
   build-image:
