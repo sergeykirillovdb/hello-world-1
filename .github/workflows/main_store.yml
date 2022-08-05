@@ -2,7 +2,7 @@ name: Build Images and Handle Uffizzi Previews.
 
 on:
   pull_request:
-    types: [opened,reopened,synchronize,closed]
+    types: [opened,reopened,synchronize]
 
 jobs:
   build-image:
@@ -61,12 +61,12 @@ jobs:
   deploy-uffizzi-preview:
     name: Use Remote Workflow to Preview on Uffizzi
     needs: render-compose-file
-    uses: UffizziCloud/preview-action/.github/workflows/reusable.yaml@master
+    uses: SergeyKirillovDBTestOrganization/preview-action-test/.github/workflows/reusable.yaml@master
     with:
       compose-file-cache-key: ${{ needs.render-compose-file.outputs.compose-file-cache-key }}
       compose-file-cache-path: ${{ needs.render-compose-file.outputs.compose-file-cache-path }}
       username: test_registration@test.com
-      server: https://app.qa-gke.uffizzi.com/
+      server: https://69ee-5-164-11-136.eu.ngrok.io
       project: dasdasda-ga1f
     secrets:
       password: ${{ secrets.UFFIZZI_PASSWORD }}
