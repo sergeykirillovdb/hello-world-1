@@ -66,7 +66,6 @@ jobs:
       compose-file-cache-key: ${{ needs.render-compose-file.outputs.compose-file-cache-key }}
       compose-file-cache-path: ${{ needs.render-compose-file.outputs.compose-file-cache-path }}
       username: test_registration@test.com
-      password: 12345678
       server: https://e35c-83-149-21-110.eu.ngrok.io
       project: test-project
     secrets:
